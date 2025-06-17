@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato | Lumina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #121212;
+      color: #fff;
+      line-height: 1.5;
+      padding: 2rem 1.5rem 5rem; /* bottom padding for footer */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    a:hover,
+    a:focus {
+      color: #ff4f87;
+      outline: none;
+    }
+    /* Container max width */
+    .container {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+    /* Header */
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #333;
+      gap: 0.5rem;
+    }
+    .header-left {
+      text-align: center;
+    }
+    .site-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ff4f87;
+      user-select: none;
+    }
+    .page-subtitle {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: #aaa;
+      user-select: none;
+    }
+    /* Contact Section */
+    .contact-section {
+      margin: 3rem auto 4rem;
+      max-width: 800px;
+      text-align: center;
+      color: #ddd;
+      user-select: none;
+    }
+    .contact-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: #ff4f87;
+    }
+    .contact-section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+    /* Button */
+    .feedback-button,
+    .back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1.2rem;
+      background-color: #ff4f87;
+      border-radius: 10px;
+      font-weight: 500;
+      color: white;
+      box-shadow: 0 4px 12px rgba(255 79 135 / 0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feedback-button:hover,
+    .feedback-button:focus,
+    .back-button:hover,
+    .back-button:focus {
+      background-color: #ff2e6b;
+      box-shadow: 0 6px 18px rgba(255 46 107 / 0.7);
+    }
+    /* Footer */
+    footer {
+      margin-top: auto;
+      background: linear-gradient(135deg, #ff4f87 0%, #e9456a 100%);
+      color: white;
+      padding: 3rem 2rem 2rem;
+      user-select: none;
+      box-shadow: 0 -5px 15px rgba(0,0,0,0.4);
+    }
+    footer .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+      gap: 2rem;
+      max-width: 1200px;
+    }
+    footer h3 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      border-bottom: 2px solid rgba(255 255 255 / 0.4);
+      padding-bottom: 0.5rem;
+    }
+    footer p,
+    footer li {
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+    footer ul li {
+      margin-bottom: 0.7rem;
+    }
+    footer ul li a {
+      color: white;
+      transition: color 0.3s ease;
+    }
+    footer ul li a:hover,
+    footer ul li a:focus {
+      color: #ffd1db;
+      outline: none;
+    }
+    /* Social icons container */
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: rgba(255 255 255 / 0.3);
+      border-radius: 50%;
+      color: white;
+      font-size: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .social-icons a:hover,
+    .social-icons a:focus {
+      background: white;
+      color: #ff4f87;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="container" role="banner">
+    <div class="header-left">
+      <h1 class="site-title" tabindex="0">Lumina</h1>
+      <span class="page-subtitle" tabindex="0">Silver Club 🩶</span>
+    </div>
+  </header>
+
+  <section class="contact-section container" aria-labelledby="contact-title">
+    <h2 id="contact-title" tabindex="0">Entre em Contato</h2>
+    <p tabindex="0">Estamos sempre abertos a ouvir você! Se você tiver alguma dúvida, sugestão ou feedback, não hesite em nos contatar.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTk4SiDp8LKbDdHp-7ZtMUzwpMVk-48YWKasvB79FvKbRgfg/viewform?usp=dialog" target="_blank" class="feedback-button" tabindex="0">Enviar Seu Feedback</a>
+    <a href="../index.html" class="back-button" tabindex="0">Voltar ao Início</a>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div>
+        <h3>Lumina Silver Club</h3>
+        <p>Junte-se a uma comunidade vibrante e experimente conteúdo exclusivo, eventos premium e muito mais.</p>
+      </div>
+      <nav aria-label="Links rápidos">
+        <h3>Links</h3>
+        <ul>
+          <li><a href="../index.html" tabindex="0">Início</a></li>
+          <li><a href="sobre.html" tabindex="0">Sobre</a></li>
+          <li><a href="contato.html" tabindex="0">Contato</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3>Serviços</h3>
+        <ul>
+          <li>Conteúdo Premium</li>
+          <li>Comunidade Ativa</li>
+          <li>Suporte Personalizado</li>
+        </ul>
+      </div>
+      <div class="social-icons" aria-label="Redes sociais">
+        <a href="https://www.instagram.com/hey_jadec/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" tabindex="0">
+          <span class="material-icons" aria-hidden="true">instagram</span>
+        </a>
+        <a href="https://www.tiktok.com/@hey_jadec?_t=ZM-8xF5LIoF24G&_r=1" target="_blank" rel="noopener noreferrer" aria-label="tiktok" tabindex="0">
+          <span class="material-icons" aria-hidden="true">tiktok</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
