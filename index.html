@@ -2,156 +2,84 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Silver Club | Lumina</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clube Rubi | Lumina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset & base */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
     }
+
     body {
-      background: #121212;
+      background: linear-gradient(135deg, #121212, #1a1a1a);
       color: #fff;
-      line-height: 1.5;
-      padding: 2rem 1.5rem 5rem; /* bottom padding for footer */
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
+      padding: 20px;
     }
-    a {
-      color: inherit;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    a:hover,
-    a:focus {
-      color: #ff4f87;
-      outline: none;
-    }
-    /* Container max width */
-    .container {
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      width: 100%;
-    }
-    /* Header */
+
     header {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #333;
-      gap: 0.5rem;
+      padding: 10px 0;
     }
+
     .header-left {
-      text-align: center;
-    }
-    .site-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #ff4f87;
-      user-select: none;
-    }
-    .page-subtitle {
-      font-size: 1.2rem;
-      font-weight: 300;
-      color: #aaa;
-      user-select: none;
-    }
-    .header-right {
-      margin-top: 1rem;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      width: 100%;
-      max-width: 420px;
-    }
-    .header-right a {
-      background-color: #ff4f87;
-      padding: 0.5rem 1.2rem;
-      border-radius: 10px;
-      font-weight: 500;
-      color: white;
-      box-shadow: 0 4px 12px rgba(255 79 135 / 0.5);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
-    }
-    .header-right a:hover,
-    .header-right a:focus {
-      background-color: #ff2e6b;
-      box-shadow: 0 6px 18px rgba(255 46 107 / 0.7);
+      flex-direction: column;
     }
 
-    /* About Section */
-    .about-section {
-      margin: 3rem auto 4rem;
-      max-width: 800px;
-      text-align: center;
-      color: #ddd;
-      user-select: none;
-    }
-    .about-section h2 {
+    .site-title {
       font-size: 2rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
       color: #ff4f87;
     }
-    .about-section p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #ccc;
+
+    .page-subtitle {
+      font-size: 1rem;
+      color: #e9456a;
     }
 
-    /* Gallery */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-bottom: 3rem;
-      user-select: none;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
     }
+
     .photo-card {
-      background-color: #1e1e1e;
+      background-color: #1a1a1a;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      box-shadow: 0 5px 20px rgba(255, 79, 135, 0.2);
       transition: transform 0.3s ease;
-      display: flex;
-      flex-direction: column;
     }
-    .photo-card:hover,
-    .photo-card:focus-within {
+
+    .photo-card:hover {
       transform: scale(1.03);
-      outline: none;
     }
+
     .photo-card img,
     .photo-card video {
       width: 100%;
       height: auto;
       display: block;
       cursor: pointer;
-      border-radius: 15px 15px 0 0;
-      user-select: none;
     }
+
     .photo-card .info {
-      padding: 1rem;
-      color: #ccc;
-      flex-grow: 1;
+      padding: 15px;
     }
+
     .photo-card .info h3 {
       font-size: 1.1rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 5px;
     }
+
     .photo-card .info p {
       font-size: 0.9rem;
+      color: #ccc;
     }
 
     /* Modal */
@@ -163,302 +91,154 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0,0,0,0.85);
+      background: rgba(0, 0, 0, 0.85);
       justify-content: center;
       align-items: center;
-      cursor: zoom-out;
     }
+
     #modal img {
       max-width: 90%;
       max-height: 90%;
       border-radius: 10px;
-      user-select: none;
     }
 
     /* Footer */
     footer {
-      margin-top: auto;
-      background: linear-gradient(135deg, #ff4f87 0%, #e9456a 100%);
-      color: white;
-      padding: 3rem 2rem 2rem;
-      user-select: none;
-      box-shadow: 0 -5px 15px rgba(0,0,0,0.4);
-    }
-    footer .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-      gap: 2rem;
-      max-width: 1200px;
-    }
-    footer h3 {
-      font-weight: 700;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-      border-bottom: 2px solid rgba(255 255 255 / 0.4);
-      padding-bottom: 0.5rem;
-    }
-    footer p,
-    footer li {
-      font-weight: 300;
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-    footer ul {
-      list-style: none;
-      padding: 0;
-    }
-    footer ul li {
-      margin-bottom: 0.7rem;
-    }
-    footer ul li a {
-      color: white;
-      transition: color 0.3s ease;
-    }
-    footer ul li a:hover,
-    footer ul li a:focus {
-      color: #ffd1db;
-      outline: none;
-    }
-    /* Social icons container */
-    .social-icons {
-      display: flex;
-      gap: 1rem;
-      margin-top: 0.5rem;
-    }
-    .social-icons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      background: rgba(255 255 255 / 0.3);
-      border-radius: 50%;
-      color: white;
-      font-size: 20px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    .social-icons a:hover,
-    .social-icons a:focus {
-      background: white;
-      color: #ff4f87;
-      outline: none;
+      background: #1a1a1a;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 30px;
+      border-top: 1px solid #333;
     }
 
-    /* Newsletter */
-    .newsletter form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
-    .newsletter input[type="email"] {
-      flex: 1 1 auto;
-      min-width: 180px;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      outline: none;
-      transition: box-shadow 0.3s ease;
-    }
-    .newsletter input[type="email"]:focus {
-      box-shadow: 0 0 6px #ff4f87;
-    }
-    .newsletter button {
-      padding: 0.5rem 1.5rem;
-      border: none;
-      border-radius: 30px;
-      background: white;
-      color: #ff4f87;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(255 79 135 / 0.7);
-      transition: background-color 0.3s ease, color 0.3s ease;
-      user-select: none;
-    }
-    .newsletter button:hover,
-    .newsletter button:focus {
-      background: #ffd1db;
-      color: #a00037;
-      outline: none;
+    footer p {
+      color: #666;
+      font-size: 0.9rem;
     }
 
-    /* Responsive */
-    @media (min-width: 769px) {
-      header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .header-left {
-        text-align: left;
-      }
-      .header-right {
-        max-width: none;
-        margin-top: 0;
-      }
+    footer a {
+      color: #ff4f87;
+      text-decoration: none;
     }
-    @media (max-width: 480px) {
-      body {
-        padding: 1rem 1rem 5rem;
-      }
-      .site-title {
-        font-size: 1.8rem;
-      }
-      .page-subtitle {
-        font-size: 1rem;
-      }
-      footer .container {
-        grid-template-columns: 1fr;
-      }
-      .header-right a {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
-      }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header class="container" role="banner">
+  <header>
     <div class="header-left">
-      <h1 class="site-title" tabindex="0">Lumina</h1>
-      <span class="page-subtitle" tabindex="0">Silver Club 🩶</span>
+      <h1 class="site-title">Lumina</h1>
+      <span class="page-subtitle">Clube Rubi ❤️</span>
     </div>
-    <nav class="header-right" role="navigation" aria-label="Menu principal">
-      <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" tabindex="0">Upgrade to Gold Club 🪙</a>
-      <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" tabindex="0">Upgrade to Diamond Club 💎</a>
-    </nav>
   </header>
 
-  <section class="about-section container" aria-labelledby="about-title">
-    <h2 id="about-title" tabindex="0">Who We Are</h2>
-    <p tabindex="0">Lumina is an exclusive community focused on providing unique experiences and premium content for its members. Our Silver Club offers access to exclusive events, early releases, and special content that you won’t find anywhere else.</p>
-  </section>
+  <div class="gallery">
+    <!-- Imagens Locais -->
+    <div class="photo-card"><img src="imgo/image (1).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (11).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (12).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (13).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (14).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (15).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (16).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (17).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (18).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (19).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (20).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (29).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (33).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (34).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (35).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (36).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/image (37).png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/imga s 2.png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/imgas.png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/vava.png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/a1.png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/a10.png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/a11.png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/a2.png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/a3.png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/a4.png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/a5.png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/a6.png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/a7.png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/a8.png" alt=""><div class="info"></div></div>
+    <div class="photo-card"><img src="imgo/a9.png" alt=""><div class="info"></div></div>
 
-  <main class="container" role="main" aria-label="Galeria de imagens">
-    <div class="gallery">
-      <article class="photo-card" tabindex="0">
-        <img src="sends/vava.png" alt="Foto do membro Vava no clube Lumina" loading="lazy" />
-        <div class="info">
-          <h3></h3>
-          <p></p>
-        </div>
-      </article>
-      <article class="photo-card" tabindex="0">
-        <img src="sends/image (1).png" alt="Imagem de evento realizado pelo Silver Club" loading="lazy" />
-        <div class="info"></div>
-      </article>
-      <article class="photo-card" tabindex="0">
-        <img src="sends/image (11).png" alt="Momento especial em uma festa do Silver Club" loading="lazy" />
-        <div class="info"></div>
-      </article>
-      <article class="photo-card" tabindex="0">
-        <img src="sends/image (33).png" alt="Momento especial em uma festa do Silver Club" loading="lazy" />
-        <div class="info"></div>
-      </article>
-      <article class="photo-card" tabindex="0">
-        <img src="sends/image (34).png" alt="Momento especial em uma festa do Silver Club" loading="lazy" />
-        <div class="info"></div>
-      </article>
-      <article class="photo-card" tabindex="0">
-        <img src="sends/image (35).png" alt="Momento especial em uma festa do Silver Club" loading="lazy" />
-        <div class="info"></div>
-      </article>
-      <article class="photo-card" tabindex="0">
-        <img src="sends/image (36).png" alt="Momento especial em uma festa do Silver Club" loading="lazy" />
-        <div class="info"></div>
-      </article>
-      <article class="photo-card" tabindex="0">
-        <img src="sends/image (37).png" alt="Momento especial em uma festa do Silver Club" loading="lazy" />
-        <div class="info"></div>
-      </article>
-      <article class="photo-card" tabindex="0">
-        <img src="sends/image (17).png" alt="Imagem artística representando o Silver Club" loading="lazy" />
-        <div class="info"></div>
-      </article>
-      <article class="photo-card" tabindex="0">
-        <img src="sends/image (18).png" alt="Outro evento realizado pelo Silver Club" loading="lazy" />
-        <div class="info"></div>
-      </article>
-      <article class="photo-card" tabindex="0">
-        <img src="sends/image (19).png" alt="Close de detalhes no clube Lumina Silver" loading="lazy" />
-        <div class="info"></div>
-      </article>
-      <article class="photo-card" tabindex="0">
-        <img src="sends/image (20).png" alt="Participantes do Silver Club Lumina" loading="lazy" />
-        <div class="info"></div>
-      </article>
+    <!-- Vídeos Locais -->
+    <div class="photo-card">
+      <video controls>
+        <source src="imgo/1749690432081epvfk33o.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
     </div>
-  </main>
 
-  <footer role="contentinfo">
-    <div class="container">
-      <div>
-        <h3>Lumina Silver Club</h3>
-        <p>Join a vibrant community and experience exclusive content, premium events, and much more.</p>
-      </div>
-      <nav aria-label="Links rápidos">
-        <h3>Links</h3>
-        <ul>
-          <li><a href="index.html" tabindex="0">Beginning</a></li>
-          <li><a href="links/sobre.html" tabindex="0">About</a></li>
-          <li><a href="links/contato.html" tabindex="0">Contact</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h3>Services</h3>
-        <ul>
-          <li>Premium Content</li>
-          <li>Active Community</li>
-          <li>Personalized Support</li>
-        </ul>
-      </div>
-      <div class="newsletter" aria-label="Inscreva-se para novidades">
-        <div class="social-icons" aria-label="Redes sociais">
-          <a href="https://www.instagram.com/hey_jadec/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" tabindex="0">
-            <span class="material-icons" aria-hidden="true">instagram</span>
-          </a>
-          <a href="https://www.tiktok.com/@hey_jadec?_t=ZM-8xF5LIoF24G&_r=1" target="_blank" rel="noopener noreferrer" aria-label="tiktok" tabindex="0">
-            <span class="material-icons" aria-hidden="true">tiktok</span>
-          </a>
-        </div>
-      </div>
+    <div class="photo-card">
+      <video controls>
+        <source src="imgo/389377168663662593.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
     </div>
-  </footer>
 
-  <div id="modal" onclick="closeModal()" aria-hidden="true" role="dialog" aria-label="Visualização da imagem">
-    <img id="modal-img" src="" alt="Imagem ampliada" / src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d360da22-fcd5-4cd0-92d1-d7e46a48c5c3.png">
+    <div class="photo-card">
+      <video controls>
+        <source src="imgo/a15.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+    </div>
+
+    <div class="photo-card">
+      <video controls>
+        <source src="imgo/aaasila.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+    </div>
+
+    <div class="photo-card">
+      <video controls>
+        <source src="imgo/and anka.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+    </div>
+
+    <div class="photo-card">
+      <video controls>
+        <source src="imgo/WhatsApp Video 2025-06-12 at 12.10.04.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+    </div>
   </div>
 
+  <!-- Modal para Imagem -->
+  <div id="modal" onclick="closeModal()">
+    <img id="modal-img" src="" alt="">
+  </div>
+
+  <!-- Script -->
   <script>
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modal-img');
     const images = document.querySelectorAll('.photo-card img');
 
-    images.forEach((img) => {
+    images.forEach(img => {
       img.addEventListener('click', () => {
         modal.style.display = 'flex';
-        modal.setAttribute('aria-hidden', 'false');
         modalImg.src = img.src;
-        modalImg.alt = img.alt || 'Imagem ampliada do conteúdo da galeria';
-        modalImg.focus();
       });
     });
 
     function closeModal() {
       modal.style.display = 'none';
-      modal.setAttribute('aria-hidden', 'true');
-      modalImg.src = '';
     }
-
-    // Fechar modal com tecla ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.style.display === 'flex') {
-        closeModal();
-      }
-    });
   </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Lumina. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
 </body>
 </html>
-
